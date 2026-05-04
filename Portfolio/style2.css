@@ -1,0 +1,112 @@
+/* Basic Reset */
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body { font-family: "Poppins", sans-serif; overflow-x: hidden; }
+
+/* Navbar */
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    background: #000; position: sticky; top: 0; z-index: 1000;
+    height: 3.5rem; padding: 0 5%;
+}
+
+.logo { font-size: 1.5rem; color: white; cursor: pointer; }
+.lt, .us { color: #00df44; }
+.logo .vivek { font-family: "Stack Sans Notch", sans-serif; }
+
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links li a {
+    text-decoration: none; color: white; opacity: 0.7;
+    font-family: "Readex Pro", sans-serif; transition: 0.3s;
+}
+.nav-links li a:hover { opacity: 1; }
+
+.hamburger { display: none; cursor: pointer; color: white; font-size: 1.5rem; }
+
+/* About Section */
+.about-section {
+    min-height: 90vh; display: flex; align-items: center;
+    background-color: #d4d4d4; padding: 50px 10%;
+}
+
+.about-container { display: flex; align-items: center; gap: 50px; width: 100%; }
+.about-content { flex: 1; }
+.about-content h1 { font-size: 3.5rem; color: #1a1a1a; }
+.highlight { color: #8a2be2; }
+.about-content h3 { font-size: 1.5rem; color: #444; margin-bottom: 20px; }
+.about-content p { color: #333; line-height: 1.6; margin-bottom: 30px; }
+
+.about-btns { display: flex; gap: 20px; }
+.btn-primary { background: #000; color: #fff; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; }
+.btn-secondary { border: 1px solid #000; color: #000; padding: 12px 25px; text-decoration: none; border-radius: 5px; }
+
+.about-image img {
+    width: 380px; height: auto; border-radius: 25px;
+    border: 10px solid #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* Skills Section */
+.skills-section { min-height: 100vh; background-color: #d4d4d4; padding: 100px 10%; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.skills-header { text-align: center; margin-bottom: 50px; }
+.skills-grid { display: flex; gap: 30px; width: 100%; max-width: 1100px; }
+.skill-card { background: #fff; padding: 40px; border-radius: 20px; text-align: center; flex: 1; transition: 0.4s; }
+.skill-card:hover { transform: translateY(-10px); border-color: #8a2be2; }
+.skill-icon { font-size: 3.5rem; color: #8a2be2; margin-bottom: 15px; }
+
+/* Footer */
+.footer { background: #000; color: white; padding: 80px 10%; text-align: center; }
+.form { width: 100%; max-width: 500px; margin: 30px auto; text-align: left; }
+input, textarea { width: 100%; background: #333; border: 1px solid #555; color: white; padding: 12px; margin-bottom: 15px; border-radius: 8px; }
+#connect { background: #fff; color: #000; padding: 12px 35px; border-radius: 50px; font-weight: bold; cursor: pointer; border: none; display: block; margin: auto; }
+
+.social { display: flex; justify-content: center; gap: 30px; margin: 40px 0; }
+.social a i { font-size: 1.8rem; color: white; transition: 0.3s; }
+.social a i:hover { color: #8a2be2; transform: scale(1.2); }
+.copyright { font-family: "Rochester", cursive; font-size: 1.4rem; margin-top: 30px; opacity: 0.8; }
+
+/* --- RESPONSIVE LOGIC --- */
+@media (max-width: 900px) {
+    .about-container { flex-direction: column-reverse; text-align: center; }
+    .about-content h1 { font-size: 2.5rem; }
+    .about-image img { width: 280px; }
+    .about-btns { justify-content: center; }
+    .skills-grid { flex-direction: column; align-items: center; }
+    .skill-card { width: 100%; max-width: 400px; }
+    .hamburger { display: block; }
+    .nav-links {
+        position: fixed; right: -100%; top: 3.5rem; background: #000;
+        width: 100%; height: 100vh; flex-direction: column; align-items: center;
+        padding-top: 50px; transition: 0.4s;
+    }
+    .nav-links.active { right: 0; }
+}
+
+
+:root {
+    --bg-color: #d4d4d4; /* Default Light Grey */
+    --text-color: #1a1a1a;
+    --card-bg: #ffffff;
+    --nav-bg: #000000;
+}
+
+/* Dark Mode Colors */
+[data-theme="dark"] {
+    --bg-color: #121212; /* Dark Black */
+    --text-color: #ffffff;
+    --card-bg: #1e1e1e;
+    --nav-bg: #1a1a1a;
+}
+
+/* Ippudu mee classes lo variables vadu */
+.about-section, .skills-section {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+.skill-card {
+    background-color: var(--card-bg);
+}
+
+#connect:hover{transform: scale(1.1); transition-duration: 0.5s;}
